@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#main{
+            width: 322px;
+            height: 500px;
+            border:2px solid black;
+            border-radius: 5px;
+            text-align: center;
+            margin-left: 500px;
+            margin-top:50px;
+            background-image: url(monkeyinfint.gif);
+            background-position: center;
+            background-size:cover;
+            background-color:gray;
+        }
+        #mycal{
+            width:100%;
+            height:5px;
+            font-weight: bolder;
+            text-align: left;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-left:20px;
+        }
+        h1#displaypara{
+            margin:30px 20px 5px 5px;
+            text-align: right;
+            font-family:'Courier New', Courier, monospace;
+            font-size:50px;
+            
+        }
+        button{
+            width:55px;
+            height: 55px;
+            margin: 8px 8px 5px 5px;
+            font-weight: bolder;
+            font-size:120%;
+            border-radius:5px;
+            box-shadow: 5px 5px;
+        
+        }
+        button:hover{
+            box-shadow: 5px 10px;
+    
+        }
+        div#button{
+            margin-top:40px;
+           
+        }
+        input{
+            width:100px;
+        }
+
+    </style>
+    <script>
+        let i = 2;
+        function change(){
+            if(i%2==0){
+                document.getElementById("main").style.backgroundImage="url('the rock.jpg')";
+                document.getElementById("displaypara").style.color="red";
+                document.getElementById("mycal").style.color="red";
+                i++;
+            }
+            else{
+                document.getElementById("main").style.backgroundImage="url('monkeyinfint.gif')";
+                document.getElementById("displaypara").style.color="black";
+                document.getElementById("mycal").style.color="black";
+                i++;
+            }
+            
+        }
+        let current=null;
+        function cal(x){
+            current += x;
+            document.getElementById("displaypara").innerHTML=current;
+            
+        }
+        function del(){
+            current = current.slice(0,-1);
+            document.getElementById("displaypara").innerHTML=current;
+        }
+        function sum(){
+            current = current.slice(0,5);
+            let q = eval(current);
+            current=q;
+            if(q==null){
+                document.getElementById("displaypara").innerHTML=0;
+            }
+            else{
+                document.getElementById("displaypara").innerHTML=q;
+            }
+            
+        }
+        function delet(){
+            current=null;
+            document.getElementById("displaypara").innerHTML=0;
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div id="mycal" class="second"><p>&nbsp;Calculator</p></div>
+        
+            <h1 id="displaypara" class="second">0</h1>
+        <div id="button">
+        
+        <button value="1" style="margin-left: 150px;" onclick="del()">&#9249;</button>
+        <button value="1" onclick="cal('/')">&#247;</button>
+        <button value="1" onclick="cal(7)">7</button>
+        <button value="1" onclick="cal(8)">8</button>
+        <button value="1" onclick="cal(9)">9</button>
+        <button value="1" onclick="cal('*')">X</button>
+        <button value="1" onclick="cal(4)">4</button>
+        <button value="1" onclick="cal(5)">5</button>
+        <button value="1" onclick="cal(6)">6</button>
+        <button value="1" onclick="cal('-')">-</button>
+        <button value="1" onclick="cal(1)">1</button>
+        <button value="1" onclick="cal(2)">2</button>
+        <button value="1" onclick="cal(3)">3</button>
+        <button value="1" onclick="cal('+')">+</button>
+        <button value="1" onclick="delet()">C</button>
+        <button value="1" onclick="cal(0)">0</button>
+        <button value="1" onclick="cal('.')">.</button>
+        <button value="1" onclick="sum(),change()">=</button>
+        </div>
+
+        
+    </div>
+    
+    
+</body>
+</html>
