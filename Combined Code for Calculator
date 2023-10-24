@@ -17,6 +17,7 @@
             background-position: center;
             background-size:cover;
             background-color:gray;
+            box-shadow:5px 10px;
         }
         #mycal{
             width:100%;
@@ -63,17 +64,19 @@
                 document.getElementById("main").style.backgroundImage="url('the rock.jpg')";
                 document.getElementById("displaypara").style.color="red";
                 document.getElementById("mycal").style.color="red";
+                document.getElementById("main").style.boxShadow="5px 10px red";
                 i++;
             }
             else{
                 document.getElementById("main").style.backgroundImage="url('monkeyinfint.gif')";
                 document.getElementById("displaypara").style.color="black";
                 document.getElementById("mycal").style.color="black";
+                document.getElementById("main").style.boxShadow="5px 10px ";
                 i++;
             }
             
         }
-        let current=null;
+        let current="";
         function cal(x){
             current += x;
             document.getElementById("displaypara").innerHTML=current;
@@ -84,11 +87,12 @@
             document.getElementById("displaypara").innerHTML=current;
         }
         function sum(){
-            current = current.slice(0,5);
+            
             let q = eval(current);
             current=q;
             if(q==null){
                 document.getElementById("displaypara").innerHTML=0;
+                
             }
             else{
                 document.getElementById("displaypara").innerHTML=q;
@@ -96,7 +100,7 @@
             
         }
         function delet(){
-            current=null;
+            current="";
             document.getElementById("displaypara").innerHTML=0;
         }
     </script>
@@ -108,24 +112,24 @@
             <h1 id="displaypara" class="second">0</h1>
         <div id="button">
         
-        <button value="1" style="margin-left: 150px;" onclick="del()">&#9249;</button>
-        <button value="1" onclick="cal('/')">&#247;</button>
-        <button value="1" onclick="cal(7)">7</button>
-        <button value="1" onclick="cal(8)">8</button>
-        <button value="1" onclick="cal(9)">9</button>
-        <button value="1" onclick="cal('*')">X</button>
-        <button value="1" onclick="cal(4)">4</button>
-        <button value="1" onclick="cal(5)">5</button>
-        <button value="1" onclick="cal(6)">6</button>
-        <button value="1" onclick="cal('-')">-</button>
-        <button value="1" onclick="cal(1)">1</button>
-        <button value="1" onclick="cal(2)">2</button>
-        <button value="1" onclick="cal(3)">3</button>
-        <button value="1" onclick="cal('+')">+</button>
-        <button value="1" onclick="delet()">C</button>
-        <button value="1" onclick="cal(0)">0</button>
-        <button value="1" onclick="cal('.')">.</button>
-        <button value="1" onclick="sum(),change()">=</button>
+        <button  style="margin-left: 150px;" onclick="del()">&#9249;</button>
+        <button  onclick="cal('/')">&#247;</button>
+        <button  onclick="cal(7)">7</button>
+        <button  onclick="cal(8)">8</button>
+        <button  onclick="cal(9)">9</button>
+        <button  onclick="cal('*')">X</button>
+        <button  onclick="cal(4)">4</button>
+        <button  onclick="cal(5)">5</button>
+        <button  onclick="cal(6)">6</button>
+        <button  onclick="cal('-')">-</button>
+        <button  onclick="cal(1)">1</button>
+        <button  onclick="cal(2)">2</button>
+        <button  onclick="cal(3)">3</button>
+        <button  onclick="cal('+')">+</button>
+        <button  onclick="delet()">C</button>
+        <button  onclick="cal(0)">0</button>
+        <button  onclick="cal('.')">.</button>
+        <button  onclick="sum(),change()">=</button>
         </div>
 
         
